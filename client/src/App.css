@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.resultsContainer {
+  display: block;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.resultsTable td {
+  vertical-align: middle !important;
+}
