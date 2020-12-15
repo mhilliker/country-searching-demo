@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { CountrySearchResults } from '../Common/CountrySearchResults';
 import { CountrySearchField } from './CountrySearchField';
 import { CountryTable } from './CountryTable';
+import { CountrySummary } from './CountrySummary';
 
 
 export const SearchArea: FunctionComponent = () => {
@@ -23,9 +24,13 @@ export const SearchArea: FunctionComponent = () => {
             <CountrySearchField onSearchResultsChanged={updateResults} />
         </div>
         <div className="resultsContainer">
-            {shouldShowTable && <CountryTable tableContent={tableContent} />}
-            {!shouldShowTable && userMessage}
+            {shouldShowTable && <>
+                <h3>Country Results</h3>
+                <CountryTable tableContent={tableContent} />
+            </>}
         </div>
+        {shouldShowTable && <CountrySummary tableContent={tableContent} />}
+        {!shouldShowTable && userMessage}
     </>
 }
 

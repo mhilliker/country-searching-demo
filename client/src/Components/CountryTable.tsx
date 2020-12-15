@@ -9,6 +9,7 @@ interface CountryTableProps {
 }
 
 export const CountryTable: FunctionComponent<CountryTableProps> = (props: CountryTableProps) => {
+
     return <Table striped bordered hover className="resultsTable">
         {countryTableHeader}
         {countryTableBody(props.tableContent)}

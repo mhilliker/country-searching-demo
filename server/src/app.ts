@@ -16,7 +16,7 @@ app.get("/", function (req, res) {
   res.send("Example backend");
 });
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 console.log("checking port", port);
 app.listen(port, () => {
   console.log(`Server now listening on port: ${port}`);
